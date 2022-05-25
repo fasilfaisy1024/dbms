@@ -1,81 +1,51 @@
+SQL> select * from student;
 
+     REGNO NAME  MAJOR BDATE
+---------- ----- ----- ---------
+        12 avd   sfg   01-NOV-17
+        13 thu   jki   02-NOV-17
+        14 erg   gth   03-NOV-17
+        16 efr   fgt   04-NOV-17
+        17 dfr   cvr   05-NOV-17
+        18 aaa   bbb   06-NOV-17
 
-SQL> create table student22 (rollno int,name varchar(20),course varchar(20));
+6 rows selected.
 
-Table created.
-
-SQL> insert into student22 values(1,'Aiswarya','MCA');
-
-1 row created.
-
-SQL> insert into student22 values(2,'Alen','MCA');
-
-1 row created.
-
-SQL> savepoint a;
+SQL> savepoint here;
 
 Savepoint created.
 
-SQL> select * from student22;
+SQL> delete from student where regno=18;
 
-    ROLLNO NAME                 COURSE
----------- -------------------- --------------------
-         1 Aiswarya             MCA
-         2 Alen                 MCA
+1 row deleted.
 
-SQL> insert into student22 values(3,'Anakha','MCA');
+SQL> select * from student;
 
-1 row created.
+     REGNO NAME  MAJOR BDATE
+---------- ----- ----- ---------
+        12 avd   sfg   01-NOV-17
+        13 thu   jki   02-NOV-17
+        14 erg   gth   03-NOV-17
+        16 efr   fgt   04-NOV-17
+        17 dfr   cvr   05-NOV-17
 
-SQL> insert into student22 values(4,'Aneeta','MCA');
-
-1 row created.
-
-SQL> select * from student22;
-
-    ROLLNO NAME                 COURSE
----------- -------------------- --------------------
-         1 Aiswarya             MCA
-         2 Alen                 MCA
-         3 Anakha               MCA
-         4 Aneeta               MCA
-
-SQL> rollback to a;
+SQL> rollback to here;
 
 Rollback complete.
 
-SQL> select * from student22;
+SQL> select * from student;
 
-    ROLLNO NAME                 COURSE
----------- -------------------- --------------------
-         1 Aiswarya             MCA
-         2 Alen                 MCA
+     REGNO NAME  MAJOR BDATE
+---------- ----- ----- ---------
+        12 avd   sfg   01-NOV-17
+        13 thu   jki   02-NOV-17
+        14 erg   gth   03-NOV-17
+        16 efr   fgt   04-NOV-17
+        17 dfr   cvr   05-NOV-17
+        18 aaa   bbb   06-NOV-17
+
+6 rows selected.
 
 SQL> commit;
 
 Commit complete.
-
-SQL> insert into student22 values(5,'Anit','MCA');
-
-1 row created.
-
-SQL> select * from student22;
-
-    ROLLNO NAME                 COURSE
----------- -------------------- --------------------
-         1 Aiswarya             MCA
-         2 Alen                 MCA
-         5 Anit                 MCA
-
-SQL> rollback;
-
-Rollback complete.
-
-SQL> select * from student22;
-
-    ROLLNO NAME                 COURSE
----------- -------------------- --------------------
-         1 Aiswarya             MCA
-         2 Alen                 MCA
-
-SQL>
