@@ -1,88 +1,75 @@
 
-SQL> create table student22a (student_id int primary key,student_name varchar(20
-),marks float);
+
+SQL> create table student_1(StudentID int not null,StudentName varchar(20),Marks int);
 
 Table created.
 
-SQL> insert into student22a values(1,'Sanjay',64);
+SQL> insert into student_1 values(1,'Sanjay',64);
 
 1 row created.
 
-SQL> insert into student22a values(2,'Varun',72);
+SQL> insert into student_1 values(2,'Varun',72);
 
 1 row created.
 
-SQL> insert into student22a values(3,'Akash',45);
+SQL> insert into student_1 values(3,'Akash',45);
 
 1 row created.
 
-SQL> insert into student22a values(4,'Rohit',86);
+SQL> insert into student_1 values(4,'Rohit',86);
 
 1 row created.
 
-SQL> insert into student22a values(5,'Anjali',92);
+SQL> insert into student_1 values(5,'Anjali',92);
 
 1 row created.
 
-SQL> insert into student22a values(6,'Ammu',95);
+SQL> insert into student_1 values(6,'Ammu',95);
 
 1 row created.
 
-SQL> insert into student22a values(7,'Rahul',80);
+SQL> insert into student_1 values(7,'Rahul',80);
 
 1 row created.
 
-SQL> insert into student22a values(8,'Prathibha',62);
+SQL> insert into student_1 values(8,'Prathibha',62);
 
 1 row created.
 
-SQL> insert into student22a values(9,'Ravi',75);
+SQL> insert into student_1 values(9,'Ravi',75);
 
 1 row created.
 
-SQL> insert into student22a values(10,'Pulkit',76);
+SQL> insert into student_1 values(10,'Pulkit',76);
 
 1 row created.
-                                                                                                                                                                                                                                                              
-SQL> select * from student22a;
 
-STUDENT_ID STUDENT_NAME              MARKS
----------- -------------------- ----------
-         1 Sanjay                       64
-         2 Varun                        72
-         3 Akash                        45
-         4 Rohit                        86
-         5 Anjali                       92
-         6 Ammu                         95
-         7 Rahul                        80
-         8 Prathibha                    62
-         9 Ravi                         75
-        10 Pulkit                       76
 
-10 rows selected.
+SQL> select count(StudentName)from student_1 where Marks>75;
 
-SQL> select count(*) from student22a where marks>75;
+COUNT(STUDENTNAME)
+------------------
+                 5
 
-  COUNT(*)
+
+SQL> select avg(Marks) from student_1;
+
+AVG(MARKS)
 ----------
-         5
+      74.7
 
-SQL> select avg(marks) as average_marks from student22a;
+SQL> select min(Marks) from student_1;
 
-AVERAGE_MARKS
--------------
-         74.7
+MIN(MARKS)
+----------
+        45
 
-SQL> select min(marks) as minimum_marks from student22a;
+SQL> select max(Marks) from student_1;
 
-MINIMUM_MARKS
--------------
-           45
+MAX(MARKS)
+----------
+        95
 
-SQL> select max(marks) as maximum_marks from student22a;
+SQL> commit;
 
-MAXIMUM_MARKS
--------------
-           95
-
-SQL>
+Commit complete.
