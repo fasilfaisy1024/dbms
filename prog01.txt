@@ -1,28 +1,33 @@
 
-
-SQL>  create table student22 (rollno int,name varchar(20),course varchar(20),yea
-r int);
+SQL> create table student12(rollno int,name varchar(20),course varchar(20),year int);
 
 Table created.
 
-SQL> select * from student22;
 
-no rows selected
+SQL> insert into student12 values(1,'alen','mca',2021);
 
-SQL> alter table student22 add primary key(rollno);
+1 row created.
+
+SQL> insert into student12 values(2,'ben','mtech',2022);
+
+1 row created.
+
+SQL> insert into student12 values(3,'ann','btech',2021);
+
+1 row created.
+
+SQL> alter table student12 add primary key(rollno);
 
 Table altered.
 
-SQL> truncate table student22;
+SQL> truncate table student12;
 
 Table truncated.
 
-SQL> select * from student22;
+SQL> select * from student12;
 
 no rows selected
 
-SQL> drop table student22;
+SQL> drop table student12;
 
 Table dropped.
-
-SQL>
