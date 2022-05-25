@@ -1,134 +1,166 @@
 
-SQL> create table employee22(empid int,name varchar(20),dept int,salary int);
+SQL> create table  employee(emp_id int,name varchar(20),dept varchar(20),salary int);
 
 Table created.
 
-SQL> create table department(deptid int,deptname varchar(20),headofdept varchar(
-20));
-
-Table created.
-
-SQL>  insert into department values (1,'Accounting','Alan');
+SQL> insert into employee values(100,'manu','sales',20000);
 
 1 row created.
 
-SQL>  insert into department values (2,'Production','Arun');
+SQL> insert into employee values(101,'philip','billing',10000);
 
 1 row created.
 
-SQL>  insert into department values (3,'HR','Nandu');
+SQL> insert into employee values(103,'mary','finance',50000);
 
 1 row created.
 
-SQL>  insert into department values (4,'Research','Atul');
+SQL> insert into employee values(104,'john','advertising',60000);
 
 1 row created.
 
-SQL>  insert into department values (5,'Travel','Gokul');
-
-1 row created.
-
-SQL> select * from department;
-
-    DEPTID DEPTNAME             HEADOFDEPT
----------- -------------------- --------------------
-         1 Accounting           Alan
-         2 Production           Arun
-         3 HR                   Nandu
-         4 Research             Atul
-         5 Travel               Gokul
-
-SQL> insert into employee22 values(101,'Ben',1,1000);
-
-1 row created.
-
-SQL> insert into employee22 values(102,'Biby',1,1500);
-
-1 row created.
-
-SQL> insert into employee22 values(103,'Benoi',3,2500);
-
-1 row created.
-
-SQL> insert into employee22 values(104,'Joel',4,3500);
-
-1 row created.
-
-SQL> insert into employee22 values(105,'Tom',5,2000);
-
-1 row created.
-
-SQL> select * from employee22;
-
-     EMPID NAME                       DEPT     SALARY
----------- -------------------- ---------- ----------
-       101 Ben                           1       1000
-       102 Biby                          1       1500
-       103 Benoi                         3       2500
-       104 Joel                          4       3500
-       105 Tom                           5       2000
-
-SQL> alter table employee22 add primary key(empid);
-
+SQL> alter table employee add primary key(emp_id);
 
 Table altered.
 
-SQL> alter table department add primary key(deptid);
+SQL> ed fasil12
+
+SQL> select * from employee;
+
+    EMP_ID NAME                 DEPT                     SALARY
+---------- -------------------- -------------------- ----------
+       100 manu                 sales                     20000
+       101 philip               billing                   10000
+       103 mary                 finance                   50000
+       104 john                 advertising               60000
+
+SQL> select * from employee;
+
+    EMP_ID NAME                 DEPT                     SALARY
+---------- -------------------- -------------------- ----------
+       100 manu                 sales                     20000
+       101 philip               billing                   10000
+       103 mary                 finance                   50000
+       104 john                 advertising               60000
 
 
-Table altered.
-
-SQL> alter table employee22 add foreign key(dept) references department(deptid);
-
-
-Table altered.
-
-SQL> select * from employee22;
-
-     EMPID NAME                       DEPT     SALARY
----------- -------------------- ---------- ----------
-       101 Ben                           1       1000
-       102 Biby                          1       1500
-       103 Benoi                         3       2500
-       104 Joel                          4       3500
-       105 Tom                           5       2000
-
-SQL> select * from department;
-
-    DEPTID DEPTNAME             HEADOFDEPT
----------- -------------------- --------------------
-         1 Accounting           Alan
-         2 Production           Arun
-         3 HR                   Nandu
-         4 Research             Atul
-         5 Travel               Gokul
-
-
-SQL> update department set headofdept='Fasil' where deptid=4;
+SQL> update employee set salary=30000 where emp_id=100;
 
 1 row updated.
 
-SQL> select * from department;
+SQL> select * from employee;
 
-    DEPTID DEPTNAME             HEADOFDEPT
----------- -------------------- --------------------
-         1 Accounting           Alan
-         2 Production           Arun
-         3 HR                   Nandu
-         4 Research             Fasil
-         5 Travel               Gokul
+    EMP_ID NAME                 DEPT                     SALARY
+---------- -------------------- -------------------- ----------
+       100 manu                 sales                     30000
+       101 philip               billing                   10000
+       103 mary                 finance                   50000
+       104 john                 advertising               60000
 
-SQL> delete from employee22 where empid=105;
+SQL> delete from employee where emp_id=103;
 
 1 row deleted.
 
-SQL> select * from employee22;
+SQL> select * from employee;
 
-     EMPID NAME                       DEPT     SALARY
----------- -------------------- ---------- ----------
-       101 Ben                           1       1000
-       102 Biby                          1       1500
-       103 Benoi                         3       2500
-       104 Joel                          4       3500
+    EMP_ID NAME                 DEPT                     SALARY
+---------- -------------------- -------------------- ----------
+       100 manu                 sales                     30000
+       101 philip               billing                   10000
+       104 john                 advertising               60000
+
+
+
+SQL> select * from employee;
+
+    EMP_ID NAME                 DEPARTMENT               SALARY
+---------- -------------------- -------------------- ----------
+       100 ben                  sales                     40000
+       101 alen                 finance                   30000
+       102 biby                 marketing                 50000
+       103 ann                  advertising               45000
+
+
+SQL> alter table employee add constraint t_pk  primary key(emp_id);
+
+Table altered.
+
+SQL> select * from employee;
+
+    EMP_ID NAME                 DEPARTMENT               SALARY
+---------- -------------------- -------------------- ----------
+       100 ben                  sales                     40000
+       101 alen                 finance                   30000
+       102 biby                 marketing                 50000
+       103 ann                  advertising               45000
+
+SQL> create table department1(dept_id int primary key,dept_name varchar(25),hod varchar(25),emp_id int not null);
+
+Table created.
+
+SQL> insert into department1 values(500,'billing','manu',100);
+
+1 row created.
+
+SQL> insert into department1 values(501,'sales','hari',101);
+
+1 row created.
+
+SQL> insert into department1 values(502,'finance','ram',102);
+
+1 row created.
+
+SQL> insert into department1 values(503,'media','anu',103);
+
+1 row created.
+
+SQL> select * from department1;
+
+   DEPT_ID DEPT_NAME                 HOD                           EMP_ID
+---------- ------------------------- ------------------------- ----------
+       500 billing                   manu                             100
+       501 sales                     hari                             101
+       502 finance                   ram                              102
+       503 media                     anu                              103
+
+
+SQL> alter table department1 add foreign key(emp_id)references employee(emp_id);
+
+Table altered.
+
+SQL>
+SQL> select * from employee;
+
+    EMP_ID NAME                 DEPARTMENT               SALARY
+---------- -------------------- -------------------- ----------
+       100 ben                  sales                     40000
+       101 alen                 finance                   30000
+       102 biby                 marketing                 50000
+       103 ann                  advertising               45000
+
+SQL> update employee set salary=45000 where emp_id=100;
+
+1 row updated.
+
+SQL> select * from employee;
+
+    EMP_ID NAME                 DEPARTMENT               SALARY
+---------- -------------------- -------------------- ----------
+       100 ben                  sales                     45000
+       101 alen                 finance                   30000
+       102 biby                 marketing                 50000
+       103 ann                  advertising               45000
+
+SQL> delete from department1 where dept_id=503;
+
+1 row deleted.
+
+SQL> select * from department1;
+
+   DEPT_ID DEPT_NAME                 HOD                           EMP_ID
+---------- ------------------------- ------------------------- ----------
+       500 billing                   manu                             100
+       501 sales                     hari                             101
+       502 finance                   ram                              102
 
 SQL>
