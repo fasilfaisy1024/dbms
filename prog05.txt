@@ -1,12 +1,56 @@
 
 
-SQL> select * from customer where id=4;
+SQL> create table customer1(id int not null,name varchar(20),age int,hometown varchar(20),salary float);
+
+Table created.
+
+SQL> insert into customer1 values(1,'Ramesh',32,'Ahmedabad',2000.00);
+
+1 row created.
+
+SQL> insert into customer1 values(2,'Khilan',25,'Delhi',1500.00);
+
+1 row created.
+
+SQL> insert into customer1 values(3,'Kaushik',23,'Kota',2000.00);
+
+1 row created.
+
+SQL> insert into customer1 values(4,'Chaitali',25,'Mumbai',6500.00);
+
+1 row created.
+
+SQL> insert into customer1 values(5,'Hardik',27,'Bhopal',8500.00);
+
+1 row created.
+
+SQL> insert into customer1 values(6,'Komal',22,'MP',4500.00);
+
+1 row created.
+
+SQL> insert into customer1 values(7,'Muffy',24,'Indore',10000.00);
+
+1 row created.
+
+SQL> insert into customer1 values(8,'Ramu',23,'Delhi',6000.00);
+
+1 row created.
+
+SQL> insert into customer1 values(9,'Rohit',24,'Ahmedabad',5000.00);
+
+1 row created.
+
+SQL> insert into customer1 values(10,'Shamli',23,'Mumbai',10000.00);
+
+1 row created.
+
+SQL> select * from customer1 where id=4;
 
         ID NAME                        AGE HOMETOWN                 SALARY
 ---------- -------------------- ---------- -------------------- ----------
          4 Chaitali                     25 Mumbai                     6500
 
-SQL> select distinct hometown from customer;
+SQL> select distinct(hometown) from customer1;
 
 HOMETOWN
 --------------------
@@ -20,10 +64,8 @@ Indore
 
 7 rows selected.
 
-SQL> select count(salary) from customer;
+SQL> select count(salary) from customer1;
 
 COUNT(SALARY)
 -------------
            10
-
-SQL>
