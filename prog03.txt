@@ -1,61 +1,64 @@
-SQL> create table employee23(empid int,name varchar(20),dept int,salary int);
+SQL> select * from student;
 
-Table created.
-
-
-SQL> insert into employee23 values(101,'Ben',1,1000);
-
-1 row created.
-
-SQL> insert into employee23 values(102,'Biby',1,1500);
-
-1 row created.
-
-SQL> select * from employee23;
-
-     EMPID NAME                       DEPT     SALARY
----------- -------------------- ---------- ----------
-       101 Ben                           1       1000
-       102 Biby                          1       1500
+     REGNO NAME  MAJOR BDATE
+---------- ----- ----- ---------
+        12 avd   sfg   01-NOV-17
+        13 thu   jki   02-NOV-17
+        14 erg   gth   03-NOV-17
+        16 efr   fgt   04-NOV-17
+        17 dfr   cvr   05-NOV-17
 
 
-SQL> create user nandu identified by ncs007;
+SQL> create user root identified by fasil;
 
 User created.
 
-SQL> select * from employee23;
 
-     EMPID NAME                       DEPT     SALARY
----------- -------------------- ---------- ----------
-       101 Ben                           1       1000
-       102 Biby                          1       1500
-
-SQL> grant all on employee23 to nandu;
+SQL> grant create session to root;
 
 Grant succeeded.
 
-SQL> grant create session to nandu;
+
+SQL> grant select,insert on student to root;
 
 Grant succeeded.
 
-SQL> connect nandu;
+SQL> connect root;
+Enter password:
+Connected.
+SQL> select * from system.student;
+
+     REGNO NAME  MAJOR BDATE
+---------- ----- ----- ---------
+        12 avd   sfg   01-NOV-17
+        13 thu   jki   02-NOV-17
+        14 erg   gth   03-NOV-17
+        16 efr   fgt   04-NOV-17
+        17 dfr   cvr   05-NOV-17
+
+
+SQL> insert into system.student values(18,'aaa','bbb','06-NOV-17');
+
+1 row created.
+
+SQL> select * from system.student;
+
+     REGNO NAME  MAJOR BDATE
+---------- ----- ----- ---------
+        12 avd   sfg   01-NOV-17
+        13 thu   jki   02-NOV-17
+        14 erg   gth   03-NOV-17
+        16 efr   fgt   04-NOV-17
+        17 dfr   cvr   05-NOV-17
+        18 aaa   bbb   06-NOV-17
+
+6 rows selected.
+
+SQL> connect system
 Enter password:
 Connected.
 
-SQL> select * from system.employee23;
-
-     EMPID NAME                       DEPT     SALARY
----------- -------------------- ---------- ----------
-       101 Ben                           1       1000
-       102 Biby                          1       1500
-
-SQL> connect system;
-Enter password:
-Connected.
-SQL> revoke all on employee23 from nandu;
+SQL> revoke select,insert on student from root;
 
 Revoke succeeded.
 
-
-
-SQL>
