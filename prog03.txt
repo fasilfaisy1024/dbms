@@ -56,14 +56,6 @@ SQL> revoke all on employee23 from nandu;
 
 Revoke succeeded.
 
-SQL> connect nandu;
-Enter password:
-Connected.
-SQL> select * from system.employee23;
-select * from system.employee23
-                     *
-ERROR at line 1:
-ORA-00942: table or view does not exist
 
 
 SQL>
