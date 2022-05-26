@@ -1,3 +1,4 @@
+set serveroutput on
 declare
     a integer := 5;
     f integer := 1;
