@@ -1,3 +1,4 @@
+set serveroutput on
 declare
     a integer := 2;
     b integer := 3;
