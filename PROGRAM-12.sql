@@ -9,3 +9,8 @@ begin
     end if;
 end;
 /
+
+OUTPUT
+Even
+
+PL/SQL procedure successfully completed.
