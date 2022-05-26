@@ -10,3 +10,8 @@ begin
     dbms_output.put_line(chr(10)||'Fatorial = '||f);
 end;
 /
+
+OUTPUT
+Fatorial = 5040
+
+PL/SQL procedure successfully completed.
