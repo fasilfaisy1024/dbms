@@ -15,3 +15,8 @@ begin
     dbms_output.put_line(chr(10)||'Greater number = '||g);
 end;
 /
+
+OUTPUT
+Greater number = 7
+
+PL/SQL procedure successfully completed.
