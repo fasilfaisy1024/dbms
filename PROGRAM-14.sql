@@ -1,8 +1,8 @@
 set serveroutput on
 declare
-    a integer := 2;
-    b integer := 3;
-    c integer := 1;
+    a integer := 5;
+    b integer := 6;
+    c integer := 7;
     g integer;
 begin
     g:= a;
