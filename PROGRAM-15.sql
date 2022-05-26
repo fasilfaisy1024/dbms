@@ -12,9 +12,11 @@ begin
     end if; 
 end;   
 begin 
-    a:= 5; 
-    b:= 3; 
+    a:= 9; 
+    b:= 4; 
     max(a, b, c); 
     dbms_output.put_line(chr(10)||'Maximum = ' || c); 
 end; 
 /
+
+OUTPUT
