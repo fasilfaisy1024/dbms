@@ -7,8 +7,10 @@ begin
     y:= x*x;
 end;   
 begin 
-    a:= 5;  
+    a:= 12;  
     square(a, b); 
     dbms_output.put_line(chr(10)||'Square = ' || b); 
 end; 
 /
+
+OUTPUT
