@@ -1,6 +1,6 @@
 set serveroutput on
 declare
-    a integer := 5;
+    a integer := 7;
     f integer := 1;
 begin
     while a > 0 loop
