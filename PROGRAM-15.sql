@@ -20,3 +20,6 @@ end;
 /
 
 OUTPUT
+Maximum = 9
+
+PL/SQL procedure successfully completed.
