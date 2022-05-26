@@ -14,3 +14,6 @@ end;
 /
 
 OUTPUT
+Square = 144
+
+PL/SQL procedure successfully completed.
