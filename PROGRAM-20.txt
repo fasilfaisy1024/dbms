@@ -1,0 +1,129 @@
+> use movie
+switched to db movie
+
+> db.MovieDetails.insertMany([{title:"Fight Club",writer:"Christopher Nolan",year:2010,actors:['D
+icaprio','Elen Page','Tom Hardy']},{title:"Dark Knight",writer:"Nolan",year:2008,actors:[
+'Christian Bale','Heath Ledger']},{title:"Forrest Gump",writer:"Robert Zemeckis"
+,year: 1994,actors:['Tom Hanks','Robin Wright']},{title:"Interstellar",writer:"Christopher Nolan",year:2014,actors:
+['Mathew McConaughey','Anne Hathaway']},{title:"The Prestige",writer:"Christopher Nolan",year:2006,actors:[
+'Christian Bale','Hugh Jackman','Scarlet Johansan']},{title:"Shutter Island",writer:"Martin Scorcesse",year:
+2010,actors:['Dicaprio','Mark Ruffalo']},{title:"Beast",writer:"Nelson",year:2022,actors:
+['Vijay','Pooja Hedge']},{title:"RRR",writer:"Rajamouli",year:2022,actors:
+['Ramcharan','Alia Bhatt']},{title:"KGF2",writer:"Prasanth Neel",year:2022,actors:
+['Yash','Srinidhi Shetty']},{title:"Jana Gana Mana",writer:"Dijo Jose Antony",year:2022,actors:
+['Prithviraj','Suraj']}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 10,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+> db.MovieDetails.find().pretty()
+{
+        "_id" : ObjectId("628c59fd84d91acdf368cf6d"),
+        "title" : "Fight Club",
+        "writer" : "Christopher Nolan",
+        "year" : 2010,
+        "actors" : [
+                "Dicaprio",
+                "Elen Page",
+                "Tom Hardy"
+        ]
+}
+{
+        "_id" : ObjectId("628c5b9684d91acdf368cf6e"),
+        "title" : "Dark Knight",
+        "writer" : "Nolan",
+        "year" : 2008,
+        "actors" : [
+                "Christian Bale",
+                "Heath Ledger"
+        ]
+}
+{
+        "_id" : ObjectId("628c5b9684d91acdf368cf6f"),
+        "title" : "Forrest Gump",
+        "writer" : "Robert Zemeckis",
+        "year" : 1994,
+        "actors" : [
+                "Tom Hanks",
+                "Robin Wright"
+        ]
+}
+{
+        "_id" : ObjectId("628c5bed84d91acdf368cf70"),
+        "title" : "Interstellar",
+        "writer" : "Christopher Nolan",
+        "year" : 2014,
+        "actors" : [
+                "Mathew McConaughey",
+                "Anne Hathaway"
+        ]
+}
+{
+        "_id" : ObjectId("628c5c4d84d91acdf368cf71"),
+        "title" : "The Prestige",
+        "writer" : "Nolan",
+        "year" : 2006,
+        "actors" : [
+                "Christian Bale",
+                "Hugh Jackman",
+                "Scarlet Johansan]"
+        ]
+}
+{
+        "_id" : ObjectId("628c5cf684d91acdf368cf72"),
+        "title" : "Shutter Island",
+        "writer" : "Martin Scorcesse",
+        "year" : 2010,
+        "actors" : [
+                "Dicaprio",
+                "Mark Ruffalo"
+        ]
+}
+{
+        "_id" : ObjectId("628c5cf684d91acdf368cf73"),
+        "title" : "Beast",
+        "writer" : "Nelson",
+        "year" : 2022,
+        "actors" : [
+                "Vijay",
+                "Pooja Hedge"
+        ]
+}
+{
+        "_id" : ObjectId("628c5cf684d91acdf368cf74"),
+        "title" : "RRR",
+        "writer" : "Rajamouli",
+        "year" : 2022,
+        "actors" : [
+                "Ramcharan",
+                "Alia Bhatt"
+        ]
+}
+{
+        "_id" : ObjectId("628c5cf684d91acdf368cf75"),
+        "title" : "KGF2",
+        "writer" : "Prasanth Neel",
+        "year" : 2022,
+        "actors" : [
+                "Yash",
+                "Srinidhi Shetty"
+        ]
+}
+
+{
+        "_id" : ObjectId("628c5cf684d91acdf368cf76"),
+        "title" : "Jana Gana Mana",
+        "writer" : "Dijo Jose Antony",
+        "year" : 2022,
+        "actors" : [
+                "Prithviraj",
+                "Suraj"
+        ]
+}
