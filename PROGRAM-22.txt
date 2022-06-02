@@ -1,0 +1,40 @@
+> use db1
+switched to db db1
+>  db.createUser({user:"me",pwd:"secret",roles:[{role:"userAdminAnyDatabase",db:
+"admin"}]})
+Successfully added user: {
+        "user" : "me",
+        "roles" : [
+                {
+                        "role" : "userAdminAnyDatabase",
+                        "db" : "admin"
+                }
+        ]
+}
+> db.createUser({user:"somebody",pwd:"secret",roles:[{role:"userAdmin",db:"mydb"
+}]})
+Successfully added user: {
+        "user" : "somebody",
+        "roles" : [
+                {
+                        "role" : "userAdmin",
+                        "db" : "mydb"
+                }
+        ]
+}
+> db.createUser({user:"anonymous",pwd:"secret",roles:[{role:"read",db:"mydb"},{r
+ole:"readWrite",db:"db3"}]})
+Successfully added user: {
+        "user" : "anonymous",
+        "roles" : [
+                {
+                        "role" : "read",
+                        "db" : "mydb"
+                },
+                {
+                        "role" : "readWrite",
+                        "db" : "db3"
+                }
+        ]
+}
+>
