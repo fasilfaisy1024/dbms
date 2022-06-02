@@ -1,0 +1,116 @@
+> db.createCollection("EMPL")
+{ "ok" : 1 }
+>  db.EMPL.insertMany([{empno:1,name:"ST",salary:2000,role:"OB"},{empno:
+... 2,name:"MSD",salary:1500,role:"WK"},{empno:3,name:"YS",salary:1000,role:
+... "ALR"},{empno:4,name:"RD",salary:1000,role:"MOB"},{empno:5,name:
+... "RS",salary:500,role:"OB"},{empno:6,name:"BK",salary:500,role:
+... "MOB"},{empno:7,name:"VK",salary:300,role:"BW"},{empno:8,name:
+... "JB",salary:400,role:"BW"},{empno:9,name:"HP",salary:400,role:
+... "md"},{empno:10,name:"VS",salary:300,role:"ALR"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("629886ca16b4c0e16246a325"),
+                ObjectId("629886ca16b4c0e16246a326"),
+                ObjectId("629886ca16b4c0e16246a327"),
+                ObjectId("629886ca16b4c0e16246a328"),
+                ObjectId("629886ca16b4c0e16246a329"),
+                ObjectId("629886ca16b4c0e16246a32a"),
+                ObjectId("629886ca16b4c0e16246a32b"),
+                ObjectId("629886ca16b4c0e16246a32c"),
+                ObjectId("629886ca16b4c0e16246a32d"),
+                ObjectId("629886ca16b4c0e16246a32e")
+        ]
+}
+> db.EMPL.find()
+{ "_id" : ObjectId("629886ca16b4c0e16246a325"), "empno" : 1, "name" : "ST", "sal
+ary" : 2000, "role" : "OB" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a326"), "empno" : 2, "name" : "MSD", "sa
+lary" : 1500, "role" : "WK" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a327"), "empno" : 3, "name" : "YS", "sal
+ary" : 1000, "role" : "ALR" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a328"), "empno" : 4, "name" : "RD", "sal
+ary" : 1000, "role" : "MOB" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a329"), "empno" : 5, "name" : "RS", "sal
+ary" : 500, "role" : "OB" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a32a"), "empno" : 6, "name" : "BK", "sal
+ary" : 500, "role" : "MOB" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a32b"), "empno" : 7, "name" : "VK", "sal
+ary" : 300, "role" : "BW" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a32c"), "empno" : 8, "name" : "JB", "sal
+ary" : 400, "role" : "BW" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a32d"), "empno" : 9, "name" : "HP", "sal
+ary" : 400, "role" : "md" }
+{ "_id" : ObjectId("629886ca16b4c0e16246a32e"), "empno" : 10, "name" : "VS", "sa
+lary" : 300, "role" : "ALR" }
+> db.EMPL.find().pretty()
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a325"),
+        "empno" : 1,
+        "name" : "ST",
+        "salary" : 2000,
+        "role" : "OB"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a326"),
+        "empno" : 2,
+        "name" : "MSD",
+        "salary" : 1500,
+        "role" : "WK"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a327"),
+        "empno" : 3,
+        "name" : "YS",
+        "salary" : 1000,
+        "role" : "ALR"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a328"),
+        "empno" : 4,
+        "name" : "RD",
+        "salary" : 1000,
+        "role" : "MOB"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a329"),
+        "empno" : 5,
+        "name" : "RS",
+        "salary" : 500,
+        "role" : "OB"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a32a"),
+        "empno" : 6,
+        "name" : "BK",
+        "salary" : 500,
+        "role" : "MOB"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a32b"),
+        "empno" : 7,
+        "name" : "VK",
+        "salary" : 300,
+        "role" : "BW"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a32c"),
+        "empno" : 8,
+        "name" : "JB",
+        "salary" : 400,
+        "role" : "BW"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a32d"),
+        "empno" : 9,
+        "name" : "HP",
+        "salary" : 400,
+        "role" : "md"
+}
+{
+        "_id" : ObjectId("629886ca16b4c0e16246a32e"),
+        "empno" : 10,
+        "name" : "VS",
+        "salary" : 300,
+        "role" : "ALR"
+}
